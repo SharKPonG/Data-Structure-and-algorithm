@@ -8,7 +8,9 @@ int main(){
     int n, days;
     double milkTarget;
     double Nutrient = 0.0; 
-    cin >> n >> milkTarget >> days;
+    cin >> n;
+    cin >> milkTarget;
+    cin >> days;
 
     double P = pow(10, n);
 
@@ -19,16 +21,16 @@ int main(){
         double today = cow * P;
         Nutrient += today;
 
-        if (fabs(today - milkTarget) < 1e-9){
+        if (fabs(2 * today - milkTarget) < 1e-9){
             proMaxMilk++;
         }
-        if (fabs(today - milkTarget) < 1e-9 || today > milkTarget){
+        else if (fabs(today - milkTarget) < 1e-9 || today > milkTarget){
             milk++;
         }
     }
 
     cout << "Milk : " << milk << endl;
-    cout << "Promax Milk : " << proMaxMilk << endl;
+    cout << "ProMax Milk : " << proMaxMilk << endl;
     cout << "Nutrient : " << fixed << setprecision(17) << Nutrient << endl;
 
     return 0;
