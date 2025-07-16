@@ -8,23 +8,26 @@ int main(){
     int n, days;
     double milkTarget;
     double Nutrient = 0.0; 
-    cin >> n;
-    cin >> milkTarget;
-    cin >> days;
+    cin >> n >> milkTarget >> days;
 
     double P = pow(10, n);
+    double cow;
 
     for (int i = 0; i < days; i++){
-        int cow;
-        cin >> cow;
+        int count;
+        cin >> count;
 
-        double today = cow * P;
-        Nutrient += today;
+        cow = 0;
+        for (int j = 0; j < count; j++){
+            cow += P;
+        }
 
-        if (fabs(2 * today - milkTarget) < 1e-9){
+        Nutrient += cow;
+
+        if (fabs((cow + cow) - milkTarget) < 1e-9){
             proMaxMilk++;
         }
-        else if (fabs(today - milkTarget) < 1e-9 || today > milkTarget){
+        else if (fabs(cow - milkTarget) < 1e-9 || cow > milkTarget){
             milk++;
         }
     }
