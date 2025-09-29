@@ -1,0 +1,9 @@
+{
+    "files.associations": {
+        "algorithm": "c",
+        "format": "c",
+        "string.h": "c",
+        "iostream": "cpp",
+        "new": "cpp"
+    },
+}
